@@ -33,6 +33,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-spinners": "^0.9.0",
+    "serve": "^11.3.2",
     "typewriter-effect": "^2.13.1",
     "uuid": "^7.0.3",
     "yup": "^0.28.3"
@@ -46,7 +47,9 @@
     "eject": "react-scripts eject",
     "build:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
     "watch:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "cy:run": "cypress run",
+    "postbuild": "serve -l 3000 build & yarn cy:run && fkill:3000"
   },
   "husky": {
     "hooks": {
